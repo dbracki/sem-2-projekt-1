@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1522180290 source:c:\users\admln\desktop\studia\lista zakupów\main.cpp
+	<iostream>
+	<cstdio>
+	"zakupy.h"
+
+1522179846 c:\users\admln\desktop\studia\lista zakupów\zakupy.h
+	<iostream>
+
+1522181280 source:c:\users\admln\desktop\studia\lista zakupów\zakupy.cpp
+	<iostream>
+	"zakupy.h"
+	<fstream>
+	<string>
+
