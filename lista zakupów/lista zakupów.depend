@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1521711286 source:c:\users\admln\desktop\studia\lista zakupów\main.cpp
+1522275898 source:c:\users\admln\desktop\studia\lista zakupów\main.cpp
 	<iostream>
 	<cstdio>
 	"zakupy.h"
 
-1521711501 c:\users\admln\desktop\studia\lista zakupów\zakupy.h
+1522280242 c:\users\admln\desktop\studia\lista zakupów\zakupy.h
 	<iostream>
 
-1521711490 source:c:\users\admln\desktop\studia\lista zakupów\zakupy.cpp
+1522280314 source:c:\users\admln\desktop\studia\lista zakupów\zakupy.cpp
 	<iostream>
 	"zakupy.h"
 	<fstream>

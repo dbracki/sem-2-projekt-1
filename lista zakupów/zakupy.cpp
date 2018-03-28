@@ -6,35 +6,346 @@
 
 using namespace std;
 
-int pobierz()
+int Check (int decision)
 {
-    int x;
-    fstream plik;
-    plik.open("zakupy.txt",ios::in);
-    if(plik.good()==false)
+    int Choice;
+    std::cin >> Choice;
+    while(std::cin.fail() || Choice<1 || Choice>decision)
     {
-        cout<<"Nie udalo sie wczytac gotowej listy"<<endl;
+        std::cout << "Wrong number, or not number at all. Pick one of AVAILABLE choices" << std::endl;
+        std::cin.clear();
+        std::cin.ignore(256,'\n');
+        std::cin >> Choice;
+    }
+    return Choice;
+};
+
+void Purchase::ChoseCategory(Purchase p, Food f[], Alcohol a[], Book b[], Toy t[], List *&Start)
+{
+    cout<<"What category you want to chose from?"<<endl;
+    cout<<"1. Food"<<endl;
+    cout<<"2. Alcohol"<<endl;
+    cout<<"3. Toys"<<endl;
+    cout<<"4. Books"<<endl;
+    int decision;
+    decision=Check(4);
+    switch ( decision )
+    {
+        case 1:
+            p.BuyFood(f, Start);
+            break;
+
+        case 2:
+            BuyAlcohol(a, Start);
+            break;
+
+        case 3:
+            BuyToy(t, Start);
+            break;
+
+        case 4:
+            BuyBook(b, Start);
+            break;
+    }
+
+
+};
+
+void Menu::ShowOptions()
+{
+    int Close=0;
+    Food f[10];
+    Alcohol a[10];
+    Toy t[10];
+    Book b[10];
+    fstream File;
+    File.open("Alcohol.txt",ios::in);
+    if(File.good()==false)
+    {
+        cout<<"Sorry, couldn't find \"Alcohol.txt\" :("<<endl;
+        Close=1;
     }
     else
     {
-        string linia;
-        plik>>x;
-        lista p[x];
-        for(int i=0; i<x; i++)
+        string Line;
+        for(int i=0; i<8; i++)
         {
-            p[i].numer=i+1;
-            p[i].uzycie=0;
-            getline(plik,linia);
-            p[i].kategoria=linia;
-            getline(plik,linia);
-            p[i].nazwa=linia;
-            plik>>p[i].cena;
+            a[i].Number=i+1;
+            a[i].IsUsed=0;
+            getline(File,Line);
+            a[i].Name=Line;
+            getline(File,Line);
+            a[i].Type=Line;
+            File>>a[i].Percentage;
+            File>>a[i].Price;
         }
     }
-    plik.close();
-    return x;
+    File.close();
+    File.open("Food.txt",ios::in);
+    if(File.good()==false)
+    {
+        cout<<"Sorry, couldn't find \"Food.txt\" :("<<endl;
+        Close=1;
+    }
+    else
+    {
+        string Line;
+        for(int i=0; i<8; i++)
+        {
+            f[i].Number=i+1;
+            f[i].IsUsed=0;
+            getline(File,Line);
+            f[i].Name=Line;
+            getline(File,Line);
+            f[i].Quantity=Line;
+            getline(File,Line);
+            f[i].ExpirationDate=Line;
+            File>>f[i].Price;
+        }
+    }
+    File.close();
+    File.open("Toy.txt",ios::in);
+    if(File.good()==false)
+    {
+        cout<<"Sorry, couldn't find \"Toy.txt\" :("<<endl;
+        Close=1;
+    }
+    else
+    {
+        string Line;
+        for(int i=0; i<8; i++)
+        {
+            t[i].Number=i+1;
+            t[i].IsUsed=0;
+            getline(File,Line);
+            t[i].Name=Line;
+            File>>t[i].Price;
+        }
+    }
+    File.close();
+    File.open("Book.txt",ios::in);
+    if(File.good()==false)
+    {
+        cout<<"Sorry, couldn't find \"Book.txt\" :("<<endl;
+        Close=1;
+    }
+    else
+    {
+        string Line;
+        for(int i=0; i<8; i++)
+        {
+            b[i].Number=i+1;
+            b[i].IsUsed=0;
+            getline(File,Line);
+            b[i].Name=Line;
+            getline(File,Line);
+            b[i].Author=Line;
+            getline(File,Line);
+            b[i].Type=Line;
+            File>>b[i].Price;
+        }
+    }
+    File.close();
+    List *Start;
+    Start = nullptr;
+    Purchase p;
+    while (Close==0)
+    {
+        cout<<"What would you like to do?"<<endl;
+        cout<<"1. Show the shopping list"<<endl;
+        cout<<"2. Add an item to the shopping list"<<endl;
+        cout<<"3. Clear the shopping list"<<endl;
+        cout<<"4. Show the most expensive purchase"<<endl;
+        cout<<"5. Run tests"<<endl;
+        cout<<"6. Exit program"<<endl;
+        int decision;
+        decision=Check(6);
+        switch ( decision )
+        {
+        case 1:
+            p.ShowList(Start);
+            break;
+
+        case 2:
+            p.ChoseCategory(p, f, a, b, t, Start);
+            break;
+
+        case 3:
+            p.ClearList(Start);
+            break;
+
+        case 4:
+            p.MostExpensive(Start);
+            break;
+
+        case 5:
+
+            break;
+
+        case 6:
+            Close=1;
+            break;
+        }
+    }
 };
 
-void wczytaj(int i){
+void Purchase::BuyFood(Food f[], List *&Start)
+{
+    for(int i=0; i<8; i++)
+    {
+            cout<<f[i].Number<<endl;
+            cout<<f[i].Name<<endl;
+            cout<<f[i].Quantity<<endl;
+            cout<<f[i].ExpirationDate<<endl;
+            cout<<f[i].Price<<endl;
+    }
+    cout<<"\nWhich food would you like to buy?"<<endl;
+    cout<<"Object number: ";
+    int decision, amount;
+    decision=Check(8)-1;
+    cout<<"How many would you like to purchase?"<<endl;
+    cout<<"Amount of chosen item: ";
+    cin>>amount;
+    f[decision].IsUsed=amount;
+    List *New;
+    New = Start;
+    New = new List;
+    New->Assignation=2;
+    New->Name=f[decision].Name;
+    New->Amount=f[decision].IsUsed;
+};
+
+void Purchase::BuyAlcohol(Alcohol a[], List *&Start)
+{
+    for(int i=0; i<8; i++)
+    {
+            cout<<a[i].Number<<endl;
+            cout<<a[i].Name<<endl;
+            cout<<a[i].Type<<endl;
+            cout<<"Alcohol contained: "<<a[i].Percentage<<endl;
+            cout<<a[i].Price<<endl;
+    }
+    cout<<"\nWhich food would you like to buy?"<<endl;
+    cout<<"Object number: ";
+    int decision, amount;
+    decision=Check(8)-1;
+    cout<<"How many would you like to purchase?"<<endl;
+    cout<<"Amount of chosen item: ";
+    cin>>amount;
+    a[decision].IsUsed=amount;
+    List *New;
+    New = Start;
+    New = new List;
+    New->Assignation=3;
+    New->Name=a[decision].Name;
+    New->Amount=a[decision].IsUsed;
+};
+
+void Purchase::BuyToy(Toy t[], List *&Start)
+{
+    for(int i=0; i<8; i++)
+    {
+            cout<<t[i].Number<<endl;
+            cout<<t[i].Name<<endl;
+            cout<<t[i].Price<<endl;
+    }
+    cout<<"\nWhich food would you like to buy?"<<endl;
+    cout<<"Object number: ";
+    int decision, amount;
+    decision=Check(8)-1;
+    cout<<"How many would you like to purchase?"<<endl;
+    cout<<"Amount of chosen item: ";
+    cin>>amount;
+    t[decision].IsUsed=amount;
+    List *New;
+    New = Start;
+    New = new List;
+    New->Assignation=4;
+    New->Name=t[decision].Name;
+    New->Amount=t[decision].IsUsed;
+};
+
+void Purchase::BuyBook(Book b[], List *&Start)
+{
+    for(int i=0; i<8; i++)
+    {
+            cout<<b[i].Number<<endl;
+            cout<<b[i].Name<<endl;
+            cout<<b[i].Author<<endl;
+            cout<<b[i].Type<<endl;
+            cout<<b[i].Price<<endl;
+    }
+    cout<<"\nWhich food would you like to buy?"<<endl;
+    cout<<"Object number: ";
+    int decision, amount;
+    decision=Check(8)-1;
+    cout<<"How many would you like to purchase?"<<endl;
+    cout<<"Amount of chosen item: ";
+    cin>>amount;
+    b[decision].IsUsed=amount;
+    List *New;
+    New = Start;
+    New = new List;
+    New->Assignation=5;
+    New->Name=b[decision].Name;
+    New->Amount=b[decision].IsUsed;
+    New->Price=b[decision].Price*b[decision].IsUsed;
+};
+
+void Purchase::ShowList(List *&Start)
+{
+    List *Current=Start;
+    if(!Current) cout<<"There are no purchases on the list yet"<<endl;
+    else
+    {
+        int decision, Amount=0;
+        cout<<"Which products would you like to see?"<<endl;
+        cout<<"1. All of them!"<<endl;
+        cout<<"2. Food"<<endl;
+        cout<<"3. Alcohol"<<endl;
+        cout<<"4. Toys"<<endl;
+        cout<<"5. Books"<<endl;
+        decision=Check(5);
+        while(Current)
+        {
+            if (Current->Assignation==decision || decision==1)
+            {
+                cout<<Current->Name<<"\tx "<<Current->Amount<<"\t"<<Current->Price<<endl;
+                Amount++;
+            }
+            Current=Current->Next;
+        }
+        if(Amount==0) cout<<"There are no purchases of this class on the list yet"<<endl;
+    }
+}
+
+void Purchase::ClearList(List *&Start)
+{
+    List *Current;
+    while(Start)
+    {
+        Current=Start;
+        Start=Start->Next;
+        delete Current;
+    }
+};
+
+
+void Purchase::MostExpensive(List *&Start)
+{
+    List *Current;
+    int Expensive=0;
+    while(Start)
+    {
+        Current=Start;
+        Start=Start->Next;
+        if (Current->Price>Expensive) Expensive=Current->Price;
+    }
+    while(Start)
+    {
+        Current=Start;
+        Start=Start->Next;
+        if (Current->Price==Expensive) cout<<Current->Name<<"\tx "<<Current->Amount<<"\t"<<Current->Price<<endl;
+    }
 
 };
