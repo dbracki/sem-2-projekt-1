@@ -67,10 +67,10 @@ void Menu::ShowOptions()
 {
     int Close=0;
     TotalPrice TP(0);
-    Food f[10];
-    Alcohol a[10];
-    Toy t[10];
-    Book b[10];
+    Food f[8];
+    Alcohol a[8];
+    Toy t[8];
+    Book b[8];
     fstream File;
     File.open("Alcohol.txt",ios::in);
     if(File.good()==false)
@@ -237,7 +237,7 @@ void Purchase::BuyAlcohol(Alcohol a[], List *&Start)
 {
     for(int i=0; i<8; i++)
     {
-            cout<<a[i].Number<<endl;
+            cout<<"\n"<<a[i].Number<<endl;
             cout<<a[i].Name<<endl;
             cout<<a[i].Type<<endl;
             cout<<"Alcohol contained: "<<a[i].Percentage<<endl;
