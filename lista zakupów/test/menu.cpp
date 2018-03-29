@@ -43,10 +43,8 @@ void Menu::ShowOptions()
         {
             a[i].Number=i+1;
             a[i].IsUsed=0;
-            getline(File,Line);
-            a[i].Name=Line;
-            getline(File,Line);
-            a[i].Type=Line;
+            File>>a[i].Name;
+            File>>a[i].Type;
             File>>a[i].Percentage;
             File>>a[i].Price;
         }
@@ -65,12 +63,9 @@ void Menu::ShowOptions()
         {
             f[i].Number=i+1;
             f[i].IsUsed=0;
-            getline(File,Line);
-            f[i].Name=Line;
-            getline(File,Line);
-            f[i].Quantity=Line;
-            getline(File,Line);
-            f[i].ExpirationDate=Line;
+            File>>f[i].Name;
+            File>>f[i].Quantity;
+            File>>f[i].ExpirationDate;
             File>>f[i].Price;
         }
     }
@@ -88,8 +83,7 @@ void Menu::ShowOptions()
         {
             t[i].Number=i+1;
             t[i].IsUsed=0;
-            getline(File,Line);
-            t[i].Name=Line;
+            File>>t[i].Name;
             File>>t[i].Price;
         }
     }
@@ -107,12 +101,9 @@ void Menu::ShowOptions()
         {
             b[i].Number=i+1;
             b[i].IsUsed=0;
-            getline(File,Line);
-            b[i].Name=Line;
-            getline(File,Line);
-            b[i].Author=Line;
-            getline(File,Line);
-            b[i].Type=Line;
+            File>>b[i].Name;
+            File>>b[i].Author;
+            File>>b[i].Type;
             File>>b[i].Price;
         }
     }

@@ -11,6 +11,7 @@ struct List
     int Amount;
     double Price;
     List *Next;
+    List *Prev;
 };
 
 class TotalPrice

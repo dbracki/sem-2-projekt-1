@@ -1,4 +1,4 @@
-Toy Car
+Toy_Car
 22.09
 Doll
 12.59
@@ -8,9 +8,9 @@ Yo-Yo
 5.99
 Laser
 1.29
-Rubiks Cube
+Rubiks_Cube
 3.99
-Board Game
+Board_Game
 30.39
-Diablo III
+Diablo_III
 79.99

@@ -4,16 +4,16 @@
 	<cstdio>
 	"zakupy.h"
 
-1522323258 /home/mion/s/193/dbracki/projects/sem-2/untitled folder/test/zakupy.h
+1522324361 /home/mion/s/193/dbracki/projects/sem-2/untitled folder/test/zakupy.h
 	<iostream>
 
-1522322893 source:/home/mion/s/193/dbracki/projects/sem-2/untitled folder/test/menu.cpp
+1522323613 source:/home/mion/s/193/dbracki/projects/sem-2/untitled folder/test/menu.cpp
 	<iostream>
 	"zakupy.h"
 	<fstream>
 	<string>
 
-1522323294 source:/home/mion/s/193/dbracki/projects/sem-2/untitled folder/test/Purchase.cpp
+1522324361 source:/home/mion/s/193/dbracki/projects/sem-2/untitled folder/test/Purchase.cpp
 	<iostream>
 	"zakupy.h"
 	<fstream>

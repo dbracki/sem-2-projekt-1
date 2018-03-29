@@ -1,4 +1,4 @@
-Jack Daniels
+Jack_Daniels
 Whisky
 40
 42.99

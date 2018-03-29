@@ -70,7 +70,7 @@ void Purchase::BuyFood(Food f[], List *&Start)
 {
     for(int i=0; i<8; i++)
     {
-            cout<<f[i].Number<<endl;
+            cout<<"\n"<<f[i].Number<<endl;
             cout<<f[i].Name<<endl;
             cout<<f[i].Quantity<<endl;
             cout<<f[i].ExpirationDate<<endl;
@@ -85,8 +85,10 @@ void Purchase::BuyFood(Food f[], List *&Start)
     cin>>amount;
     f[decision].IsUsed=amount;
     List *New;
-    New = Start;
-    New = new List;
+    New->Prev->Next=Start;
+    New->Prev=Start;
+    Start->Next->Prev=New;
+    Start->Next=New;
     New->Assignation=2;
     New->Name=f[decision].Name;
     New->Amount=f[decision].IsUsed;
@@ -124,7 +126,7 @@ void Purchase::BuyToy(Toy t[], List *&Start)
 {
     for(int i=0; i<8; i++)
     {
-            cout<<t[i].Number<<endl;
+            cout<<"\n"<<t[i].Number<<endl;
             cout<<t[i].Name<<endl;
             cout<<t[i].Price<<endl;
     }
@@ -149,7 +151,7 @@ void Purchase::BuyBook(Book b[], List *&Start)
 {
     for(int i=0; i<8; i++)
     {
-            cout<<b[i].Number<<endl;
+            cout<<"\n"<<b[i].Number<<endl;
             cout<<b[i].Name<<endl;
             cout<<b[i].Author<<endl;
             cout<<b[i].Type<<endl;
