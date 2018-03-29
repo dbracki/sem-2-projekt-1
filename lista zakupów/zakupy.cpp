@@ -51,9 +51,22 @@ void Purchase::ChoseCategory(Purchase p, Food f[], Alcohol a[], Book b[], Toy t[
 
 };
 
+
+void TotalPrice::Count(TotalPrice TP, List *&Start)
+{
+    List *Current;
+    while(Start)
+    {
+        Current=Start;
+        Start=Start->Next;
+        TP.Sum=(TP + Current->Price).get();
+    }
+};
+
 void Menu::ShowOptions()
 {
     int Close=0;
+    TotalPrice TP(0);
     Food f[10];
     Alcohol a[10];
     Toy t[10];
@@ -156,8 +169,9 @@ void Menu::ShowOptions()
         cout<<"2. Add an item to the shopping list"<<endl;
         cout<<"3. Clear the shopping list"<<endl;
         cout<<"4. Show the most expensive purchase"<<endl;
-        cout<<"5. Run tests"<<endl;
-        cout<<"6. Exit program"<<endl;
+        cout<<"5. Show total Price"<<endl;
+        cout<<"6. Run tests"<<endl;
+        cout<<"7. Exit program"<<endl;
         int decision;
         decision=Check(6);
         switch ( decision )
@@ -179,10 +193,14 @@ void Menu::ShowOptions()
             break;
 
         case 5:
-
+            TP.Count(TP, Start);
             break;
 
         case 6:
+
+            break;
+
+        case 7:
             Close=1;
             break;
         }

@@ -63,6 +63,7 @@ class Book
 class Purchase
 {
     public:
+        int Total;
         void MostExpensive(List *&Start);
         void ClearList(List *&Start);
         void ShowList(List *&Start);
@@ -72,6 +73,26 @@ class Purchase
         void BuyAlcohol(Alcohol *a, List *&Start);
         void BuyBook(Book *b, List *&Start);
         void AddItem(List *&Start);
-        int TotalPrice();
 };
+
+class TotalPrice
+{
+public:
+    TotalPrice(double Total)
+        :Sum(Total)
+        { }
+    TotalPrice operator +( const double & Total ) const
+    {
+        return TotalPrice( Total*1.23 + Sum );
+    }
+
+    const double & get() const
+    {
+        return Sum;
+    }
+    double Sum;
+    void Count(TotalPrice TP, List *&Start);
+};
+
+
 
