@@ -1,0 +1,33 @@
+Harry Potter I
+J. K. Rowling
+Fantasy
+25.99
+The Way Of Kings
+Brandon Sanderson
+Fantasy
+32.99
+Murder On The Orient Express
+Agata Christie
+Thriller
+17.99
+Percy Jackson I
+Rick Riordan
+Fanttasy
+36.99
+The Life Of Pi
+Yann Mortel
+Belles-lettres
+22.99
+Cherub I
+Robert Muchamore
+Fantasy
+45.99
+The Witcher I
+Andrzej Sapkowski
+Fantasy
+12.99
+The Chronicles Of Jakub Wedrowycz
+Andrzej Pilipiuk
+Fantasy
+17.99
+
