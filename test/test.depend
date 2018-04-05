@@ -1,0 +1,61 @@
+# depslib dependency file v1.0
+1522322562 source:/home/mion/s/193/dbracki/projects/sem-2/untitled folder/test/main.cpp
+	<iostream>
+	<cstdio>
+	"zakupy.h"
+
+1522324361 /home/mion/s/193/dbracki/projects/sem-2/untitled folder/test/zakupy.h
+	<iostream>
+
+1522323613 source:/home/mion/s/193/dbracki/projects/sem-2/untitled folder/test/menu.cpp
+	<iostream>
+	"zakupy.h"
+	<fstream>
+	<string>
+
+1522324361 source:/home/mion/s/193/dbracki/projects/sem-2/untitled folder/test/Purchase.cpp
+	<iostream>
+	"zakupy.h"
+	<fstream>
+	<string>
+
+1522917825 source:/home/mion/s/193/dbracki/sem2/test/main.cpp
+	<iostream>
+	<cstdio>
+	"zakupy.h"
+
+1522917825 /home/mion/s/193/dbracki/sem2/test/zakupy.h
+	<iostream>
+
+1522917825 source:/home/mion/s/193/dbracki/sem2/test/menu.cpp
+	<iostream>
+	"zakupy.h"
+	<fstream>
+	<string>
+
+1522917825 source:/home/mion/s/193/dbracki/sem2/test/Purchase.cpp
+	<iostream>
+	"zakupy.h"
+	<fstream>
+	<string>
+
+1522917825 source:/home/mion/s/193/dbracki/projects/sem-2/test/main.cpp
+	<iostream>
+	<cstdio>
+	"zakupy.h"
+
+1522927898 /home/mion/s/193/dbracki/projects/sem-2/test/zakupy.h
+	<iostream>
+
+1522927883 source:/home/mion/s/193/dbracki/projects/sem-2/test/menu.cpp
+	<iostream>
+	"zakupy.h"
+	<fstream>
+	<string>
+
+1522926363 source:/home/mion/s/193/dbracki/projects/sem-2/test/Purchase.cpp
+	<iostream>
+	"zakupy.h"
+	<fstream>
+	<string>
+

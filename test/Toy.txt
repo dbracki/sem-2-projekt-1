@@ -1,0 +1,16 @@
+Toy_Car
+22.09
+Doll
+12.59
+Football
+25.50
+Yo-Yo
+5.99
+Laser
+1.29
+Rubiks_Cube
+3.99
+Board_Game
+30.39
+Diablo_III
+79.99
