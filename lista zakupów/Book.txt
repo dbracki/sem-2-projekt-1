@@ -1,25 +1,32 @@
-Harry Potter I
-J. K. Rowling
+Harry_Potter_I
+J._K._Rowling
 Fantasy
-The Way Of Kings
-Brandon Sanderson
+33.90
+The_Way_Of_Kings
+Brandon_Sanderson
 Fantasy
-Murder On The Orient Express
-Agata Christie
+42.99
+Murder_On_The_Orient_Express
+Agata_Christie
 Thriller
-Percy Jackson I
-Rick Riordan
+18.99
+Percy_Jackson_I
+Rick_Riordan
 Fanttasy
-The Life Of Pi
-Yann Mortel
+22.49
+The_Life_Of_Pi
+Yann_Mortel
 Belles-lettres
-Cherub I
-Robert Muchamore
+33.99
+Cherub_I
+Robert_Muchamore
 Fantasy
-The Witcher I
-Andrzej Sapkowski
+12.99
+The_Witcher_I
+Andrzej_Sapkowski
 Fantasy
-The Chronicles Of Jakub Wedrowycz
-Andrzej Pilipiuk
+17.99
+The_Chronicles_Of_Jakub_Wedrowycz
+Andrzej_Pilipiuk
 Fantasy
-
+25.00

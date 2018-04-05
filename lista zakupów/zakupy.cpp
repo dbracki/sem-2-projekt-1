@@ -51,7 +51,6 @@ void Purchase::ChoseCategory(Purchase p, Food f[], Alcohol a[], Book b[], Toy t[
 
 };
 
-
 void TotalPrice::Count(TotalPrice TP, List *&Start)
 {
     List *Current;
@@ -80,15 +79,12 @@ void Menu::ShowOptions()
     }
     else
     {
-        string Line;
         for(int i=0; i<8; i++)
         {
             a[i].Number=i+1;
             a[i].IsUsed=0;
-            getline(File,Line);
-            a[i].Name=Line;
-            getline(File,Line);
-            a[i].Type=Line;
+            File>>a[i].Name;
+            File>>a[i].Type;
             File>>a[i].Percentage;
             File>>a[i].Price;
         }
@@ -102,17 +98,13 @@ void Menu::ShowOptions()
     }
     else
     {
-        string Line;
         for(int i=0; i<8; i++)
         {
             f[i].Number=i+1;
             f[i].IsUsed=0;
-            getline(File,Line);
-            f[i].Name=Line;
-            getline(File,Line);
-            f[i].Quantity=Line;
-            getline(File,Line);
-            f[i].ExpirationDate=Line;
+            File>>f[i].Name;
+            File>>f[i].Quantity;
+            File>>f[i].ExpirationDate;
             File>>f[i].Price;
         }
     }
@@ -125,13 +117,11 @@ void Menu::ShowOptions()
     }
     else
     {
-        string Line;
         for(int i=0; i<8; i++)
         {
             t[i].Number=i+1;
             t[i].IsUsed=0;
-            getline(File,Line);
-            t[i].Name=Line;
+            File>>t[i].Name;
             File>>t[i].Price;
         }
     }
@@ -149,18 +139,13 @@ void Menu::ShowOptions()
         {
             b[i].Number=i+1;
             b[i].IsUsed=0;
-            getline(File,Line);
-            b[i].Name=Line;
-            getline(File,Line);
-            b[i].Author=Line;
-            getline(File,Line);
-            b[i].Type=Line;
+            File>>b[i].Name;
+            File>>b[i].Author;
+            File>>b[i].Type;
             File>>b[i].Price;
         }
     }
     File.close();
-    List *Start;
-    Start = nullptr;
     Purchase p;
     while (Close==0)
     {
@@ -173,7 +158,7 @@ void Menu::ShowOptions()
         cout<<"6. Run tests"<<endl;
         cout<<"7. Exit program"<<endl;
         int decision;
-        decision=Check(6);
+        decision=Check(7);
         switch ( decision )
         {
         case 1:
@@ -211,7 +196,7 @@ void Purchase::BuyFood(Food f[], List *&Start)
 {
     for(int i=0; i<8; i++)
     {
-            cout<<f[i].Number<<endl;
+            cout<<"\n"<<f[i].Number<<endl;
             cout<<f[i].Name<<endl;
             cout<<f[i].Quantity<<endl;
             cout<<f[i].ExpirationDate<<endl;
@@ -224,13 +209,20 @@ void Purchase::BuyFood(Food f[], List *&Start)
     cout<<"How many would you like to purchase?"<<endl;
     cout<<"Amount of chosen item: ";
     cin>>amount;
-    f[decision].IsUsed=amount;
-    List *New;
-    New = Start;
-    New = new List;
-    New->Assignation=2;
-    New->Name=f[decision].Name;
-    New->Amount=f[decision].IsUsed;
+    if (amount<1) cout<<"Wrong amount"<<endl;
+    else
+    {
+        f[decision].IsUsed+=amount;
+        List *New = new List;
+        New->Prev->Next=Start;
+        New->Prev=Start;
+        Start->Next->Prev=New;
+        Start->Next=New;
+        New->Next=NULL;
+        New->Assignation=2;
+        New->Name=f[decision].Name;
+        New->Amount=f[decision].IsUsed;
+    }
 };
 
 void Purchase::BuyAlcohol(Alcohol a[], List *&Start)
@@ -240,7 +232,7 @@ void Purchase::BuyAlcohol(Alcohol a[], List *&Start)
             cout<<"\n"<<a[i].Number<<endl;
             cout<<a[i].Name<<endl;
             cout<<a[i].Type<<endl;
-            cout<<"Alcohol contained: "<<a[i].Percentage<<endl;
+            cout<<"Alcohol contained: "<<a[i].Percentage<<"%"<<endl;
             cout<<a[i].Price<<endl;
     }
     cout<<"\nWhich food would you like to buy?"<<endl;
@@ -250,20 +242,24 @@ void Purchase::BuyAlcohol(Alcohol a[], List *&Start)
     cout<<"How many would you like to purchase?"<<endl;
     cout<<"Amount of chosen item: ";
     cin>>amount;
-    a[decision].IsUsed=amount;
-    List *New;
-    New = Start;
-    New = new List;
-    New->Assignation=3;
-    New->Name=a[decision].Name;
-    New->Amount=a[decision].IsUsed;
+    if (amount<1) cout<<"Wrong amount"<<endl;
+    else
+    {
+        a[decision].IsUsed+=amount;
+        List *New;
+        New = Start;
+        New = new List;
+        New->Assignation=3;
+        New->Name=a[decision].Name;
+        New->Amount=a[decision].IsUsed;
+    }
 };
 
 void Purchase::BuyToy(Toy t[], List *&Start)
 {
     for(int i=0; i<8; i++)
     {
-            cout<<t[i].Number<<endl;
+            cout<<"\n"<<t[i].Number<<endl;
             cout<<t[i].Name<<endl;
             cout<<t[i].Price<<endl;
     }
@@ -274,20 +270,24 @@ void Purchase::BuyToy(Toy t[], List *&Start)
     cout<<"How many would you like to purchase?"<<endl;
     cout<<"Amount of chosen item: ";
     cin>>amount;
-    t[decision].IsUsed=amount;
-    List *New;
-    New = Start;
-    New = new List;
-    New->Assignation=4;
-    New->Name=t[decision].Name;
-    New->Amount=t[decision].IsUsed;
+    if (amount<1) cout<<"Wrong amount"<<endl;
+    else
+    {
+        t[decision].IsUsed+=amount;
+        List *New;
+        New = Start;
+        New = new List;
+        New->Assignation=4;
+        New->Name=t[decision].Name;
+        New->Amount=t[decision].IsUsed;
+    }
 };
 
 void Purchase::BuyBook(Book b[], List *&Start)
 {
     for(int i=0; i<8; i++)
     {
-            cout<<b[i].Number<<endl;
+            cout<<"\n"<<b[i].Number<<endl;
             cout<<b[i].Name<<endl;
             cout<<b[i].Author<<endl;
             cout<<b[i].Type<<endl;
@@ -300,20 +300,26 @@ void Purchase::BuyBook(Book b[], List *&Start)
     cout<<"How many would you like to purchase?"<<endl;
     cout<<"Amount of chosen item: ";
     cin>>amount;
-    b[decision].IsUsed=amount;
-    List *New;
-    New = Start;
-    New = new List;
-    New->Assignation=5;
-    New->Name=b[decision].Name;
-    New->Amount=b[decision].IsUsed;
-    New->Price=b[decision].Price*b[decision].IsUsed;
+    if (amount<1) cout<<"Wrong amount"<<endl;
+    else
+    {
+        b[decision].IsUsed+=amount;
+        List *New;
+        New = Start;
+        New = new List;
+        New->Assignation=5;
+        New->Name=b[decision].Name;
+        New->Amount=b[decision].IsUsed;
+        New->Price=b[decision].Price*b[decision].IsUsed;
+    }
 };
 
 void Purchase::ShowList(List *&Start)
 {
     List *Current=Start;
-    if(!Current) cout<<"There are no purchases on the list yet"<<endl;
+    Current->Next=Start->Next;
+    Current->Prev=Start->Prev;
+    if(!Current->Next) cout<<"There are no purchases on the list yet"<<endl;
     else
     {
         int decision, Amount=0;
@@ -356,13 +362,13 @@ void Purchase::MostExpensive(List *&Start)
     while(Start)
     {
         Current=Start;
-        Start=Start->Next;
+        Current=Current->Next;
         if (Current->Price>Expensive) Expensive=Current->Price;
     }
     while(Start)
     {
         Current=Start;
-        Start=Start->Next;
+        Current=Current->Next;
         if (Current->Price==Expensive) cout<<Current->Name<<"\tx "<<Current->Amount<<"\t"<<Current->Price<<endl;
     }
 

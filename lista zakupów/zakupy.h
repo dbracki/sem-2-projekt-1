@@ -2,14 +2,16 @@
 
 using namespace std;
 
-struct List
+typedef struct List
 {
     int Assignation;
     string Name;
     int Amount;
     double Price;
-    List *Next;
-};
+    struct List *Next;
+    struct List *Prev;
+}L;
+L * Start;
 
 class Menu
 {
