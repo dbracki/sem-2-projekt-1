@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1528326748 source:c:\users\admln\desktop\szyfrowanie blokowe\main.cpp
+	<iostream>
+	"Interface.h"
+
+1528328970 c:\users\admln\desktop\szyfrowanie blokowe\include\interface.h
+	"Cmachine.h"
+	<iostream>
+	<vector>
+
+1528358637 c:\users\admln\desktop\szyfrowanie blokowe\include\cmachine.h
+	<fstream>
+
+1528355218 source:c:\users\admln\desktop\szyfrowanie blokowe\src\block.cpp
+	"Block.h"
+
+1528355188 c:\users\admln\desktop\szyfrowanie blokowe\include\block.h
+	<iostream>
+	<string>
+
+1528360877 source:c:\users\admln\desktop\szyfrowanie blokowe\src\cipher.cpp
+	"Cipher.h"
+
+1528360392 c:\users\admln\desktop\szyfrowanie blokowe\include\cipher.h
+	<vector>
+	"Keyword.h"
+
+1528360623 source:c:\users\admln\desktop\szyfrowanie blokowe\src\cmachine.cpp
+	"Cmachine.h"
+	"message.h"
+	"Cipher.h"
+
+1528360924 source:c:\users\admln\desktop\szyfrowanie blokowe\src\keyword.cpp
+	"Keyword.h"
+
+1528360924 c:\users\admln\desktop\szyfrowanie blokowe\include\keyword.h
+	<string>
+	<iostream>
+
+1528357595 source:c:\users\admln\desktop\szyfrowanie blokowe\src\message.cpp
+	"message.h"
+
+1528356093 c:\users\admln\desktop\szyfrowanie blokowe\include\message.h
+	<string>
+	<iostream>
+	<vector>
+	"Block.h"
+
+1528358586 source:c:\users\admln\desktop\szyfrowanie blokowe\src\interface.cpp
+	"Interface.h"
+
