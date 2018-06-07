@@ -1,0 +1,103 @@
+# depslib dependency file v1.0
+1526856526 source:c:\users\admln\desktop\enigma\src\code.cpp
+	"code.h"
+
+1526854766 source:c:\users\admln\desktop\enigma\src\interface.cpp
+	<iostream>
+	"interface.h"
+
+1526856526 c:\users\admln\desktop\enigma\include\interface.h
+	"word.h"
+	"code.h"
+	"Wordlist.h"
+	<vector>
+	<fstream>
+
+1526858244 source:c:\users\admln\desktop\enigma\main.cpp
+	"interface.h"
+
+1526856526 c:\users\admln\desktop\enigma\include\code.h
+	<iostream>
+	<string>
+
+1526849111 source:c:\users\admln\desktop\enigma\src\word.cpp
+	"word.h"
+
+1526847817 c:\users\admln\desktop\enigma\include\word.h
+	<iostream>
+
+1526856033 c:\users\admln\desktop\enigma\include\wordlist.h
+	<vector>
+	"word.h"
+
+1526856884 source:c:\users\admln\desktop\enigma\src\wordlist.cpp
+	<string>
+	"Wordlist.h"
+
+1526856526 c:\users\admln\desktop\enigma\interface.h
+	"word.h"
+	"code.h"
+	"Wordlist.h"
+	<vector>
+	<fstream>
+
+1526847817 c:\users\admln\desktop\enigma\word.h
+	<iostream>
+
+1526856526 c:\users\admln\desktop\enigma\code.h
+	<iostream>
+	<string>
+
+1526856033 c:\users\admln\desktop\enigma\wordlist.h
+	<vector>
+	"word.h"
+
+1526858299 source:c:\users\admln\desktop\enigma\code.cpp
+	"code.h"
+
+1526858258 source:c:\users\admln\desktop\enigma\interface.cpp
+	<iostream>
+	"interface.h"
+
+1526849111 source:c:\users\admln\desktop\enigma\word.cpp
+	"word.h"
+
+1526856884 source:c:\users\admln\desktop\enigma\wordlist.cpp
+	<string>
+	"Wordlist.h"
+
+1526858299 source:c:\users\admln\desktop\studia\enigma\code.cpp
+	"code.h"
+
+1526856526 c:\users\admln\desktop\studia\enigma\code.h
+	<iostream>
+	<string>
+
+1526858258 source:c:\users\admln\desktop\studia\enigma\interface.cpp
+	<iostream>
+	"interface.h"
+
+1526856526 c:\users\admln\desktop\studia\enigma\interface.h
+	"word.h"
+	"code.h"
+	"Wordlist.h"
+	<vector>
+	<fstream>
+
+1526847817 c:\users\admln\desktop\studia\enigma\word.h
+	<iostream>
+
+1526856033 c:\users\admln\desktop\studia\enigma\wordlist.h
+	<vector>
+	"word.h"
+
+1526858244 source:c:\users\admln\desktop\studia\enigma\main.cpp
+	"interface.h"
+
+1526849111 source:c:\users\admln\desktop\studia\enigma\word.cpp
+	"word.h"
+
+1526856884 source:c:\users\admln\desktop\studia\enigma\wordlist.cpp
+	<string>
+	"Wordlist.h"
+
