@@ -3,29 +3,29 @@
 	<iostream>
 	"Interface.h"
 
-1528328970 c:\users\admln\desktop\szyfrowanie blokowe\include\interface.h
+1529278416 c:\users\admln\desktop\szyfrowanie blokowe\include\interface.h
 	"Cmachine.h"
 	<iostream>
 	<vector>
 
-1528358637 c:\users\admln\desktop\szyfrowanie blokowe\include\cmachine.h
+1529286070 c:\users\admln\desktop\szyfrowanie blokowe\include\cmachine.h
 	<fstream>
 
-1528355218 source:c:\users\admln\desktop\szyfrowanie blokowe\src\block.cpp
+1529252838 source:c:\users\admln\desktop\szyfrowanie blokowe\src\block.cpp
 	"Block.h"
 
-1528355188 c:\users\admln\desktop\szyfrowanie blokowe\include\block.h
+1529275161 c:\users\admln\desktop\szyfrowanie blokowe\include\block.h
 	<iostream>
 	<string>
 
-1528360877 source:c:\users\admln\desktop\szyfrowanie blokowe\src\cipher.cpp
+1529285961 source:c:\users\admln\desktop\szyfrowanie blokowe\src\cipher.cpp
 	"Cipher.h"
 
-1528360392 c:\users\admln\desktop\szyfrowanie blokowe\include\cipher.h
+1529285685 c:\users\admln\desktop\szyfrowanie blokowe\include\cipher.h
 	<vector>
 	"Keyword.h"
 
-1528360623 source:c:\users\admln\desktop\szyfrowanie blokowe\src\cmachine.cpp
+1529287803 source:c:\users\admln\desktop\szyfrowanie blokowe\src\cmachine.cpp
 	"Cmachine.h"
 	"message.h"
 	"Cipher.h"
@@ -37,15 +37,16 @@
 	<string>
 	<iostream>
 
-1528357595 source:c:\users\admln\desktop\szyfrowanie blokowe\src\message.cpp
+1529286070 source:c:\users\admln\desktop\szyfrowanie blokowe\src\message.cpp
 	"message.h"
 
-1528356093 c:\users\admln\desktop\szyfrowanie blokowe\include\message.h
+1529303896 c:\users\admln\desktop\szyfrowanie blokowe\include\message.h
 	<string>
 	<iostream>
 	<vector>
+	<math.h>
 	"Block.h"
 
-1528358586 source:c:\users\admln\desktop\szyfrowanie blokowe\src\interface.cpp
+1529286102 source:c:\users\admln\desktop\szyfrowanie blokowe\src\interface.cpp
 	"Interface.h"
 

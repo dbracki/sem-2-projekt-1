@@ -3,6 +3,6 @@
  Block::Block(){
  };
 
-int Block::isChar(int x){
+char Block::isChar(int x){
     return info[x];
  };

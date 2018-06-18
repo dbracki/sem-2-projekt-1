@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <math.h>
 
 #include "Block.h"
 
@@ -15,12 +16,15 @@ class message
     public:
 
         vector <Block> cBlock;
-        message();
+        message(string message);
         void codeCharacter(int x, char c);
+        void tpozition();
         string Show();
+        int getnumber();
 
 
     private:
+        int number;
         string cMessage;
 
 };

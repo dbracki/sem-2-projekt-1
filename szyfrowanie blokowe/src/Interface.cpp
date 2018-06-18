@@ -6,26 +6,22 @@ Interface::Interface(){
 
 
 bool Interface::run(){
-
-    cout<<"What would you like to do?"<<endl;
-    cout<<"1. Code a message"<<endl;
-    cout<<"2. Decode a message"<<endl;
-    cout<<"3. End program"<<endl;
-    int x;
-    cin>>x;
-    switch (x)
-    {
-        case 1:
-            cm.code(1);
-            break;
-
-        case 2:
-            cm.code(-1);
-            break;
-
-        case 3:
-            return false;
-    }
-    return true;
+    int d1,d2,d3;
+    cout<<"Program your coding algorithm"<<endl;
+    cout<<"Keyword"<<endl;
+    cout<<"1. Always the same"<<endl;
+    cout<<"2. Different for every block"<<endl;
+    cin>>d1;
+    cout<<"Use previous block to program next?"<<endl;
+    cout<<"1. Yes"<<endl;
+    cout<<"2. No"<<endl;
+    cin>>d2;
+    cout<<"Add bonus amount?"<<endl;
+    cout<<"1. Yes"<<endl;
+    cout<<"2. No"<<endl;
+    cin>>d3;
+    Cmachine cm;
+    cm.code(d1, d2, d3);
+    return false;
 
 }

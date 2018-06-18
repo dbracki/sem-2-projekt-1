@@ -5,23 +5,14 @@
 Cmachine::Cmachine(){
 };
 
-void Cmachine::code(int x){
-
-    message msg;
-    int p=msg.Show().length()/64;
-    Cipher code;
-    int i=0;
-    while(i<p){
-        int y=0;
-        for (int z=0; z<64; z++){
-            msg.codeCharacter(i*64+z,(msg.cBlock[i].isChar(y) + (code.cKeyword[i].isChar(y + code.cKeyword[i].isDigit() ))*x)%256);
-            cout<<(msg.cBlock[i].isChar(y) + (code.cKeyword[i].isChar(y + code.cKeyword[i].isDigit() ))*x)%256;
-            y++;
-            if(y>code.cKeyword[i].length()) y=0;
-        }
-        i++;
-    }
-    cout<<"Your coded mesage is:\n"<<msg.Show()<<endl;
+void Cmachine::code(int d1, int d2, int d3){
+    cout<<"Add a message"<<endl;
+    string mess;
+    cin>>mess;
+    message msg(mess);
+    int x=mess.length();
+    Cipher code(d1, x);
+    msg.tpozition();
     cout<<"Safe coded message to file?\n1. Yes\n2. No"<<endl;
     int decision;
     cin>>decision;

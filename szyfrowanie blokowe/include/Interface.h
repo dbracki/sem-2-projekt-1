@@ -10,8 +10,6 @@ using namespace std;
 class Interface
 {
     public:
-        Cmachine cm;
-
         Interface();
 
         bool run();

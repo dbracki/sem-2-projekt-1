@@ -9,11 +9,12 @@ class Cmachine
 {
     public:
         Cmachine();
-        void code(int x);
+        void code(int d1, int d2, int d3);
         void save(string msg);
 
 
     private:
+
 };
 
 #endif // CMACHINE_H

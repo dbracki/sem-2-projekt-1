@@ -10,8 +10,9 @@ class Block
 {
     public:
         Block();
-        string info;
-        int isChar(int x);
+        char info[8];
+        int bytes[64];
+        char isChar(int x);
 
     private:
 

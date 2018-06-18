@@ -11,7 +11,7 @@ class Cipher
 {
     public:
         vector <Keyword> cKeyword;
-        Cipher();
+        Cipher(int d1, int x);
 
     private:
 };
